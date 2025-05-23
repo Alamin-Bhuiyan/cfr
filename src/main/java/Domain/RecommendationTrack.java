@@ -1,24 +1,31 @@
 package Domain;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
 
 @Entity
+@Table(name = "cfr_recommendation_track")
 public class RecommendationTrack {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id")
     public Long id;
+    @Column(name = "cfr_user_id")
     public Long userId;
+    @Column(name = "total_recommendation_problems")
     public Long totalRecommendationProblems;
+    @Column(name = "solved_from_recommendation_problems")
     public Long solvedFromRecommendationProblems;
+    @Column(name = "status")
     public byte status;
+    @Column(name = "created_by_id")
     public Long createdById;
+    @Column(name = "updated_by_id")
     public Long updatedById;
+    @Column(name = "created_at")
     public LocalDateTime createdAt;
+    @Column(name = "updated_at")
     public LocalDateTime updatedAt;
 
     public Long getId() {
